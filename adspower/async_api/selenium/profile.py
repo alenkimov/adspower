@@ -26,7 +26,8 @@ class Profile(_BaseProfile):
             ip_checker: IpChecker,
             fakey: str | None,
             password: str | None,
-            last_open_time: datetime | None
+            last_open_time: datetime | None,
+            user_proxy_config: dict | None,
     ):
         """
         The class interacting with profile management.
@@ -63,6 +64,7 @@ class Profile(_BaseProfile):
             fakey,
             password,
             last_open_time,
+            user_proxy_config,
         )
 
     @classmethod

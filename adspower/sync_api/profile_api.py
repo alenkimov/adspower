@@ -28,7 +28,8 @@ class ProfileAPI(_BaseProfileAPI):
             ip_checker: IpChecker,
             fakey: str | None,
             password: str | None,
-            last_open_time: datetime | None
+            last_open_time: datetime | None,
+            user_proxy_config: dict | None,
     ):
         """
         The class interacting with profile management. It doesn't interact with getting a browser to use it with Selenium or
@@ -66,7 +67,8 @@ class ProfileAPI(_BaseProfileAPI):
             ip_checker,
             fakey,
             password,
-            last_open_time
+            last_open_time,
+            user_proxy_config,
         )
 
     @staticmethod

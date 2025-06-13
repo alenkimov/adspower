@@ -27,7 +27,8 @@ class _BaseProfileAPI(_APIEntity, ABC):
             ip_checker: IpChecker,
             fakey: str | None,
             password: str | None,
-            last_open_time: datetime | None
+            last_open_time: datetime | None,
+            user_proxy_config: dict | None,
     ):
         self.__id = id_
 
@@ -45,6 +46,7 @@ class _BaseProfileAPI(_APIEntity, ABC):
         self._category = category
         self._fakey = fakey
         self._last_open_time = last_open_time
+        self._user_proxy_config = user_proxy_config
 
         self._browser = None
 
@@ -306,6 +308,13 @@ class _BaseProfileAPI(_APIEntity, ABC):
         :return: Last open time of the profile
         """
         return self._last_open_time
+
+    @property
+    def user_proxy_config(self) -> dict | None:
+        """
+        :return: Proxy config
+        """
+        return self._user_proxy_config
 
     @property
     def category(self) -> Category | None:
